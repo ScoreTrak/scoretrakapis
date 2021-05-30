@@ -1,0 +1,7 @@
+version: v1beta1
+plugins:
+  - name: go
+    out: gen/go
+  - name: grpc-web
+    out: gen/grpc-web
+    opt: import_style=typescript,mode=grpcwebtext
