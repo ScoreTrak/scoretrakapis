@@ -9,7 +9,7 @@ The following are prerequesties to
 - [protoc](https://grpc.io/docs/protoc-installation/)
 - [protoc-gen-go](https://developers.google.com/protocol-buffers/docs/reference/go-generated)
 - [protoc-gen-grpc-web](https://github.com/grpc/grpc-web#code-generator-plugin)
-- [buf](https://buf.build)
+- [buf](https://docs.buf.build/installation)
 
 ## Installation
 
