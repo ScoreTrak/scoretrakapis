@@ -1,10 +1,10 @@
 syntax = "proto3";
-package scoretrak.check.v1;
+package pkg.proto.check.v1;
 
 import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
 
-option go_package = "github.com/ScoreTrak/go-proto/scoretrak/check/v1";
+option go_package = "github.com/pkg/proto/check/v1";
 
 message Check {
   scoretrak.proto.v1.UUID service_id = 1;

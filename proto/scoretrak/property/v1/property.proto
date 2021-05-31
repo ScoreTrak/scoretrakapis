@@ -1,10 +1,10 @@
 syntax = "proto3";
-package scoretrak.property.v1;
+package pkg.proto.property.v1;
 
 import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
 
-option go_package = "github.com/ScoreTrak/go-proto/scoretrak/property/v1";
+option go_package = "github.com/pkg/proto/property/v1";
 
 enum Status {
   STATUS_UNSPECIFIED = 0;

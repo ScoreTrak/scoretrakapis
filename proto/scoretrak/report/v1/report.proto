@@ -1,9 +1,9 @@
 syntax = "proto3";
-package scoretrak.report.v1;
+package pkg.proto.report.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/ScoreTrak/go-proto/scoretrak/report/v1";
+option go_package = "github.com/pkg/proto/report/v1";
 
 message Report {
   string cache = 2;
