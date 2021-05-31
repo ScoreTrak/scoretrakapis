@@ -1,0 +1,61 @@
+syntax = "proto3";
+package pkg.proto.host.v1;
+
+import "google/protobuf/wrappers.proto";
+import "pkg/proto/proto/v1/uuid.proto";
+import "pkg/proto/service/v1/service.proto";
+
+option go_package = "github.com/pkg/proto/host/v1";
+
+message Host {
+  scoretrak.proto.v1.UUID id = 1;
+  string address = 2;
+  scoretrak.proto.v1.UUID host_group_id = 3;
+  scoretrak.proto.v1.UUID team_id = 4;
+  google.protobuf.BoolValue pause = 5;
+  google.protobuf.BoolValue hide = 6;
+
+  google.protobuf.BoolValue edit_host = 7;
+  repeated scoretrak.service.v1.Service services = 8;
+  google.protobuf.StringValue address_list_range = 9;
+}
+
+message GetAllRequest{}
+message GetAllResponse{
+  repeated Host hosts = 1;
+}
+
+message GetByIDRequest{
+  scoretrak.proto.v1.UUID id = 1;
+}
+message GetByIDResponse{
+  Host host = 1;
+}
+
+message DeleteRequest{
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message DeleteResponse{}
+
+message StoreRequest{
+  repeated Host hosts = 1;
+}
+
+message StoreResponse{
+  repeated scoretrak.proto.v1.UUID ids = 1;
+}
+
+message UpdateRequest{
+  Host host = 1;
+}
+
+message UpdateResponse{}
+
+service HostService{
+  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse){}
+  rpc Delete(DeleteRequest) returns (DeleteResponse){}
+  rpc Store(StoreRequest) returns (StoreResponse) {}
+  rpc Update(UpdateRequest) returns (UpdateResponse) {}
+}
