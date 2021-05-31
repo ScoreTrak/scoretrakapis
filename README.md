@@ -1,10 +1,10 @@
 # ScoreTrak APIs
 
-This repo stores the protofiles for ScoreTrak's APIs.
+Protobuf files for ScoreTrak's APIs.
 
 ## Prequesuites
 
-The following are prerequesties to 
+You will need to have the following downloaded:
 
 - [protoc](https://grpc.io/docs/protoc-installation/)
 - [protoc-gen-go](https://developers.google.com/protocol-buffers/docs/reference/go-generated)
