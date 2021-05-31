@@ -4,7 +4,7 @@ package pkg.proto.round.v1;
 import "google/protobuf/timestamp.proto";
 import "pkg/proto/check/v1/check.proto";
 
-option go_package = "github.com/ScoreTrak/pkg/proto/round/v1";
+option go_package = "github.com/ScoreTrak/ScoreTrak/pkg/proto/round/v1";
 
 message Round {
   uint64 id = 1;

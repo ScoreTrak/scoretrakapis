@@ -6,7 +6,7 @@ import "pkg/proto/proto/v1/uuid.proto";
 import "pkg/proto/host/v1/host.proto";
 import "pkg/proto/user/v1/user.proto";
 
-option go_package = "github.com/ScoreTrak/pkg/proto/team/v1";
+option go_package = "github.com/ScoreTrak/ScoreTrak/pkg/proto/team/v1";
 
 message Team {
   pkg.proto.proto.v1.UUID id = 1;

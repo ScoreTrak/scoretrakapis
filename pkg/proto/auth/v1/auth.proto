@@ -1,7 +1,7 @@
 syntax = "proto3";
 package pkg.proto.auth.v1;
 
-option go_package = "github.com/ScoreTrak/pkg/proto/auth/v1";
+option go_package = "github.com/ScoreTrak/ScoreTrak/pkg/proto/auth/v1";
 
 message LoginRequest {
   string username = 1;

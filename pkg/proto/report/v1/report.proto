@@ -3,7 +3,7 @@ package pkg.proto.report.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/ScoreTrak/pkg/proto/report/v1";
+option go_package = "github.com/ScoreTrak/ScoreTrak/pkg/proto/report/v1";
 
 message Report {
   string cache = 2;
