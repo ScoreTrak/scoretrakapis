@@ -17,18 +17,18 @@ import "pkg/proto/policy/v1/policy.proto";
 option go_package = "github.com/pkg/proto/competition/v1";
 
 message Competition {
-  scoretrak.config.v1.DynamicConfig dynamic_config = 1;
-  scoretrak.report.v1.Report report = 2;
-  repeated  scoretrak.host_group.v1.HostGroup host_groups = 3;
-  repeated  scoretrak.host.v1.Host hosts = 4;
-  repeated  scoretrak.team.v1.Team teams = 5;
-  repeated  scoretrak.service.v1.Service services = 6;
-  repeated  scoretrak.service_group.v1.ServiceGroup service_groups = 7;
-  repeated  scoretrak.round.v1.Round rounds = 8;
-  repeated  scoretrak.property.v1.Property properties = 9;
-  repeated  scoretrak.check.v1.Check checks = 10;
-  repeated  scoretrak.user.v1.User users = 11;
-  scoretrak.policy.v1.Policy policy = 12;
+  pkg.proto.config.v1.DynamicConfig dynamic_config = 1;
+  pkg.proto.report.v1.Report report = 2;
+  repeated  pkg.proto.host_group.v1.HostGroup host_groups = 3;
+  repeated  pkg.proto.host.v1.Host hosts = 4;
+  repeated  pkg.proto.team.v1.Team teams = 5;
+  repeated  pkg.proto.service.v1.Service services = 6;
+  repeated  pkg.proto.service_group.v1.ServiceGroup service_groups = 7;
+  repeated  pkg.proto.round.v1.Round rounds = 8;
+  repeated  pkg.proto.property.v1.Property properties = 9;
+  repeated  pkg.proto.check.v1.Check checks = 10;
+  repeated  pkg.proto.user.v1.User users = 11;
+  pkg.proto.policy.v1.Policy policy = 12;
 }
 
 message LoadCompetitionRequest{

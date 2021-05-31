@@ -8,13 +8,13 @@ import "pkg/proto/service/v1/service.proto";
 option go_package = "github.com/pkg/proto/service_group/v1";
 
 message ServiceGroup {
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
   string name = 2;
   string display_name = 3;
   google.protobuf.BoolValue enabled = 4;
   bool skip_helper = 5;
   string label = 6;
-  repeated scoretrak.service.v1.Service services = 7;
+  repeated pkg.proto.service.v1.Service services = 7;
 }
 
 message GetAllRequest{}
@@ -23,14 +23,14 @@ message GetAllResponse{
 }
 
 message GetByIDRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 message GetByIDResponse{
   ServiceGroup service_group = 1;
 }
 
 message DeleteRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message DeleteResponse{}
@@ -40,7 +40,7 @@ message StoreRequest{
 }
 
 message StoreResponse{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message UpdateRequest{
@@ -50,7 +50,7 @@ message UpdateRequest{
 message UpdateResponse{}
 
 message RedeployRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message RedeployResponse{}

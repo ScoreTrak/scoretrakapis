@@ -9,13 +9,13 @@ import "pkg/proto/user/v1/user.proto";
 option go_package = "github.com/pkg/proto/team/v1";
 
 message Team {
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
   string name = 2;
   google.protobuf.BoolValue hide = 3;
   google.protobuf.BoolValue pause = 4;
-  repeated scoretrak.host.v1.Host hosts = 5;
+  repeated pkg.proto.host.v1.Host hosts = 5;
   google.protobuf.UInt64Value index = 6;
-  repeated scoretrak.user.v1.User users = 7;
+  repeated pkg.proto.user.v1.User users = 7;
 }
 
 message GetAllRequest{}
@@ -24,14 +24,14 @@ message GetAllResponse{
 }
 
 message GetByIDRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 message GetByIDResponse{
   Team team = 1;
 }
 
 message DeleteRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message DeleteResponse{}
@@ -41,7 +41,7 @@ message StoreRequest{
 }
 
 message StoreResponse{
-  repeated scoretrak.proto.v1.UUID ids = 1;
+  repeated pkg.proto.proto.v1.UUID ids = 1;
 }
 
 message UpdateRequest{

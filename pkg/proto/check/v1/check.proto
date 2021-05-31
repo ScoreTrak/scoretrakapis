@@ -7,7 +7,7 @@ import "pkg/proto/proto/v1/uuid.proto";
 option go_package = "github.com/pkg/proto/check/v1";
 
 message Check {
-  scoretrak.proto.v1.UUID service_id = 1;
+  pkg.proto.proto.v1.UUID service_id = 1;
   uint64 round_id = 2;
   string log = 3;
   string err = 4;
@@ -22,7 +22,7 @@ message GetAllByRoundIDResponse{
 }
 
 message GetByRoundServiceIDRequest{
-  scoretrak.proto.v1.UUID service_id = 1;
+  pkg.proto.proto.v1.UUID service_id = 1;
   uint64 round_id = 2;
 }
 message GetByRoundServiceIDResponse{
@@ -30,7 +30,7 @@ message GetByRoundServiceIDResponse{
 }
 
 message GetAllByServiceIDRequest{
-  scoretrak.proto.v1.UUID service_id = 1;
+  pkg.proto.proto.v1.UUID service_id = 1;
 }
 message GetAllByServiceIDResponse{
   repeated Check checks = 1;

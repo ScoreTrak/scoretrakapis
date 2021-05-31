@@ -9,19 +9,19 @@ import "pkg/proto/check/v1/check.proto";
 option go_package = "github.com/pkg/proto/service/v1";
 
 message Service {
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
   string name = 2;
   string display_name = 3;
   google.protobuf.UInt64Value weight = 4;
   google.protobuf.UInt64Value points_boost = 5;
   uint64 round_units = 6;
   google.protobuf.UInt64Value round_delay = 7;
-  scoretrak.proto.v1.UUID service_group_id = 8;
-  scoretrak.proto.v1.UUID host_id = 9;
+  pkg.proto.proto.v1.UUID service_group_id = 8;
+  pkg.proto.proto.v1.UUID host_id = 9;
   google.protobuf.BoolValue hide = 10;
   google.protobuf.BoolValue pause = 11;
-  repeated scoretrak.property.v1.Property properties = 12;
-  repeated scoretrak.check.v1.Check checks = 13;
+  repeated pkg.proto.property.v1.Property properties = 12;
+  repeated pkg.proto.check.v1.Check checks = 13;
 }
 
 message GetAllRequest{}
@@ -30,14 +30,14 @@ message GetAllResponse{
 }
 
 message GetByIDRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 message GetByIDResponse{
   Service service = 1;
 }
 
 message DeleteRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message DeleteResponse{}
@@ -47,7 +47,7 @@ message StoreRequest{
 }
 
 message StoreResponse{
-  repeated scoretrak.proto.v1.UUID ids = 1;
+  repeated pkg.proto.proto.v1.UUID ids = 1;
 }
 
 message UpdateRequest{
@@ -58,11 +58,11 @@ message UpdateResponse{}
 
 
 message TestServiceRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message TestServiceResponse{
-  scoretrak.check.v1.Check check = 1;
+  pkg.proto.check.v1.Check check = 1;
 }
 
 service ServiceService{

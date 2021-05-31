@@ -8,11 +8,11 @@ import "pkg/proto/host/v1/host.proto";
 option go_package = "github.com/pkg/proto/host_group/v1";
 
 message HostGroup {
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
   string name = 2;
   google.protobuf.BoolValue hide = 3;
   google.protobuf.BoolValue pause = 4;
-  scoretrak.host.v1.Host hosts = 5;
+  pkg.proto.host.v1.Host hosts = 5;
 }
 
 message GetAllRequest{}
@@ -21,14 +21,14 @@ message GetAllResponse{
 }
 
 message GetByIDRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 message GetByIDResponse{
   HostGroup host_group = 1;
 }
 
 message DeleteRequest{
-  scoretrak.proto.v1.UUID id = 1;
+  pkg.proto.proto.v1.UUID id = 1;
 }
 
 message DeleteResponse{}
@@ -38,7 +38,7 @@ message StoreRequest{
 }
 
 message StoreResponse{
-  repeated scoretrak.proto.v1.UUID ids = 1;
+  repeated pkg.proto.proto.v1.UUID ids = 1;
 }
 
 message UpdateRequest{

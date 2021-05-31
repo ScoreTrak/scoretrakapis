@@ -12,7 +12,7 @@ message Round {
   string note = 3;
   string err = 4;
   google.protobuf.Timestamp finish = 5;
-  repeated scoretrak.check.v1.Check checks = 6;
+  repeated pkg.proto.check.v1.Check checks = 6;
 }
 
 message GetAllRequest{}
