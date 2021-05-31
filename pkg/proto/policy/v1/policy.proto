@@ -3,7 +3,7 @@ package pkg.proto.policy.v1;
 
 import "google/protobuf/wrappers.proto";
 
-option go_package = "github.com/pkg/proto/policy/v1";
+option go_package = "github.com/ScoreTrak/pkg/proto/policy/v1";
 
 message Policy {
   google.protobuf.BoolValue allow_unauthenticated_users = 1;

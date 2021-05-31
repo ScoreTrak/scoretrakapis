@@ -14,7 +14,7 @@ import "pkg/proto/check/v1/check.proto";
 import "pkg/proto/user/v1/user.proto";
 import "pkg/proto/policy/v1/policy.proto";
 
-option go_package = "github.com/pkg/proto/competition/v1";
+option go_package = "github.com/ScoreTrak/pkg/proto/competition/v1";
 
 message Competition {
   pkg.proto.config.v1.DynamicConfig dynamic_config = 1;

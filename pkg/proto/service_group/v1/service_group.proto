@@ -5,7 +5,7 @@ import "google/protobuf/wrappers.proto";
 import "pkg/proto/proto/v1/uuid.proto";
 import "pkg/proto/service/v1/service.proto";
 
-option go_package = "github.com/pkg/proto/service_group/v1";
+option go_package = "github.com/ScoreTrak/pkg/proto/service_group/v1";
 
 message ServiceGroup {
   pkg.proto.proto.v1.UUID id = 1;

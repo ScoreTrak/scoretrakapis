@@ -4,7 +4,7 @@ package pkg.proto.check.v1;
 import "google/protobuf/wrappers.proto";
 import "pkg/proto/proto/v1/uuid.proto";
 
-option go_package = "github.com/pkg/proto/check/v1";
+option go_package = "github.com/ScoreTrak/pkg/proto/check/v1";
 
 message Check {
   pkg.proto.proto.v1.UUID service_id = 1;

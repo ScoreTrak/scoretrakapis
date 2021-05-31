@@ -4,7 +4,7 @@ package pkg.proto.property.v1;
 import "google/protobuf/wrappers.proto";
 import "pkg/proto/proto/v1/uuid.proto";
 
-option go_package = "github.com/pkg/proto/property/v1";
+option go_package = "github.com/ScoreTrak/pkg/proto/property/v1";
 
 enum Status {
   STATUS_UNSPECIFIED = 0;
