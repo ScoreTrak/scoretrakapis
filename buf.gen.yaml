@@ -8,6 +8,9 @@ plugins:
     opt:
       - paths=source_relative
       - require_unimplemented_servers=false
+  - name: js
+    out: gen/proto/js
+    opt: import_style=commonjs
   - name: grpc-web
     out: gen/proto/grpc-web
     opt: import_style=typescript,mode=grpcwebtext
