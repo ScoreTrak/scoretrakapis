@@ -19,6 +19,34 @@ Clone the repo
 git clone https://github.com/ScoreTrak/scoretrakapis.git
 ```
 
+## Information
+
+The go generated assets are currently in the Buf Generated Repository
+
+```bash
+go get go.buf.build/library/go/scoretrak/scoretrakapis
+```
+
+To generate other assets such as typescript, java, etc., create your own buf.gen.yaml file and execute buf gen.
+
+An example with typescript:
+
+1. Create your own [buf.gen.yaml](https://docs.buf.build/generate/usage#create-a-bufgenyaml)
+```yaml
+# buf.gen.yaml
+version: v1beta1
+plugins:
+    - name: grpc-web
+      out: path/to/output
+      opt: import_style=typescript,mode=grpcwebtext
+```
+
+2. Execute buf generate on the github reository (https://docs.buf.build/generate/usage#create-a-bufgenyaml)
+
+```bash
+buf generate --template ./buf.gen.yaml "https://github.com/scoretrak/scoretrakapis.git"
+```
+
 ## Usage
 
 Lint proto files
