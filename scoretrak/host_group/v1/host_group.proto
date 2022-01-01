@@ -5,7 +5,7 @@ import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
 import "scoretrak/host/v1/host.proto";
 
-option go_package = "buf.build/scoretrak/scoretrakapis/host_group/v1";
+option go_package = "github.com/ScoreTrak/scoretrakapis/host_group/v1";
 
 message HostGroup {
   scoretrak.proto.v1.UUID id = 1;

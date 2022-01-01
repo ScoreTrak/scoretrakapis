@@ -5,7 +5,7 @@ import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
 import "scoretrak/service/v1/service.proto";
 
-option go_package = "buf.build/scoretrak/scoretrakapis/service_group/v1";
+option go_package = "github.com/ScoreTrak/scoretrakapis/service_group/v1";
 
 message ServiceGroup {
   scoretrak.proto.v1.UUID id = 1;

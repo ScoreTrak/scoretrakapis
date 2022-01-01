@@ -4,7 +4,7 @@ package scoretrak.round.v1;
 import "google/protobuf/timestamp.proto";
 import "scoretrak/check/v1/check.proto";
 
-option go_package = "buf.build/scoretrak/scoretrakapis/round/v1";
+option go_package = "github.com/ScoreTrak/scoretrakapis/round/v1";
 
 message Round {
   uint64 id = 1;
