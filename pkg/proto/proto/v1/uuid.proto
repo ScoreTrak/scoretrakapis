@@ -1,8 +1,0 @@
-syntax = "proto3";
-package pkg.proto.proto.v1;
-
-option go_package = "github.com/ScoreTrak/ScoreTrak/pkg/proto/proto/v1";
-
-message UUID {
-  string value = 1;
-}

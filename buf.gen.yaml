@@ -1,7 +1,20 @@
-version: v1beta1
+version: v1
 plugins:
   - name: go
-    out: gen/go
+    out: gen/proto/go
+    opt:
+      - paths=source_relative
+  - name: go-grpc
+    out: gen/proto/go
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
+  - name: js
+    out: gen/proto/js
+    opt:
+      - import_style=commonjs
   - name: grpc-web
-    out: gen/grpc-web
-    opt: import_style=typescript,mode=grpcwebtext
+    out: gen/proto/grpc-web
+    opt:
+      - import_style=typescript
+      - mode=grpcwebtext
