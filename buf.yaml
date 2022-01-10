@@ -3,6 +3,11 @@ name: buf.build/scoretrak/scoretrakapis
 lint:
   use:
     - DEFAULT
+  ignore_only:
+    RPC_REQUEST_STANDARD_NAME:
+      - scoretrak/config/v1/config.proto
+    RPC_RESPONSE_STANDARD_NAME:
+      - scoretrak/config/v1/config.proto
 breaking:
   use:
     - FILE
