@@ -3,8 +3,6 @@ package scoretrak.user.v1;
 
 import "scoretrak/proto/v1/uuid.proto";
 
-option go_package = "github.com/ScoreTrak/scoretrakapis/user/v1";
-
 message User {
   scoretrak.proto.v1.UUID id = 1;
   string username = 2;

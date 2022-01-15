@@ -1,4 +1,8 @@
 version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: go.buf.build/library/go/scoretrak/scoretrakapis
 plugins:
   - name: go
     out: gen/proto/go

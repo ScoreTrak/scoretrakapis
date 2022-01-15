@@ -4,8 +4,6 @@ package scoretrak.property.v1;
 import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
 
-option go_package = "github.com/ScoreTrak/scoretrakapis/property/v1";
-
 enum Status {
   STATUS_UNSPECIFIED = 0;
   STATUS_VIEW = 1;

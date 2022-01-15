@@ -14,8 +14,6 @@ import "scoretrak/check/v1/check.proto";
 import "scoretrak/user/v1/user.proto";
 import "scoretrak/policy/v1/policy.proto";
 
-option go_package = "buf.build/scoretrak/scoretrakapis/competition/v1";
-
 message Competition {
   scoretrak.config.v1.DynamicConfig dynamic_config = 1;
   scoretrak.report.v1.Report report = 2;

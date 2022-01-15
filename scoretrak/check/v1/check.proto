@@ -4,8 +4,6 @@ package scoretrak.check.v1;
 import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
 
-option go_package = "buf.build/scoretrak/scoretrakapis/check/v1";
-
 message Check {
   scoretrak.proto.v1.UUID service_id = 1;
   uint64 round_id = 2;

@@ -6,8 +6,6 @@ import "scoretrak/proto/v1/uuid.proto";
 import "scoretrak/host/v1/host.proto";
 import "scoretrak/user/v1/user.proto";
 
-option go_package = "github.com/ScoreTrak/scoretrakapis/team/v1";
-
 message Team {
   scoretrak.proto.v1.UUID id = 1;
   string name = 2;

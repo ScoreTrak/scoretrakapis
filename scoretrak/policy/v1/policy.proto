@@ -3,8 +3,6 @@ package scoretrak.policy.v1;
 
 import "google/protobuf/wrappers.proto";
 
-option go_package = "github.com/ScoreTrak/scoretrakapis/policy/v1";
-
 message Policy {
   google.protobuf.BoolValue allow_unauthenticated_users = 1;
   google.protobuf.BoolValue allow_changing_usernames_and_passwords = 2;

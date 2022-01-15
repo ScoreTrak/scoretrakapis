@@ -3,8 +3,6 @@ package scoretrak.report.v1;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/ScoreTrak/scoretrakapis/report/v1";
-
 message Report {
   string cache = 2;
   google.protobuf.Timestamp updated_at = 3;
