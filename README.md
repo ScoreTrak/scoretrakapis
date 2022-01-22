@@ -24,7 +24,7 @@ git clone https://github.com/ScoreTrak/scoretrakapis.git
 The go generated assets are currently in the Buf Generated Repository
 
 ```bash
-go get go.buf.build/library/go/scoretrak/scoretrakapis
+go get go.buf.build/grpc/go/scoretrak/scoretrakapis
 ```
 
 To generate other assets such as typescript, java, etc., create your own buf.gen.yaml file and execute buf gen.
