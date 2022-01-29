@@ -1,5 +1,7 @@
 version: v1
 name: buf.build/scoretrak/scoretrakapis
+deps:
+  - buf.build/googleapis/googleapis
 lint:
   use:
     - DEFAULT
