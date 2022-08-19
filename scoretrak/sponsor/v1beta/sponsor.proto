@@ -1,0 +1,21 @@
+syntax = "proto3";
+package scoretrak.sponsor.v1beta;
+
+message Sponsor {
+  int32 id = 1;
+  string name = 2;
+  int32 order = 3;
+  string image_url = 4;
+}
+
+message GetAllRequest {
+  
+}
+
+message GetAllResponse {
+  repeated Sponsor sponsors = 1;
+}
+
+service SponsorService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+}
