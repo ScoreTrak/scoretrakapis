@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package scoretrak.sponsor.v1beta;
+package scoretrak.sponsor.v2beta;
 
 import "scoretrak/proto/v1/uuid.proto";
 
 message Sponsor {
-  int32 id = 1;
+  scoretrak.proto.v1.UUID id = 1;
   string name = 2;
   int32 order = 3;
   string image_url = 4;
