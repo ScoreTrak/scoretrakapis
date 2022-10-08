@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.policy.v1;
 
 import "google/protobuf/wrappers.proto";
@@ -11,17 +12,17 @@ message Policy {
   google.protobuf.BoolValue allow_red_team_launching_service_tests_manually = 5;
 }
 
-message GetRequest{}
-message GetResponse{
+message GetRequest {}
+message GetResponse {
   Policy policy = 1;
 }
-message UpdateRequest{
+message UpdateRequest {
   Policy policy = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-service PolicyService{
-  rpc Get(GetRequest) returns (stream GetResponse){}
+service PolicyService {
+  rpc Get(GetRequest) returns (stream GetResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
 }

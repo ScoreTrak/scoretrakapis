@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.report.v1;
 
 import "google/protobuf/timestamp.proto";
@@ -8,11 +9,11 @@ message Report {
   google.protobuf.Timestamp updated_at = 3;
 }
 
-message GetRequest{}
-message GetResponse{
+message GetRequest {}
+message GetResponse {
   Report report = 1;
 }
 
-service ReportService{
-  rpc Get(GetRequest) returns (stream GetResponse){}
+service ReportService {
+  rpc Get(GetRequest) returns (stream GetResponse) {}
 }

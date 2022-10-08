@@ -1,9 +1,10 @@
 syntax = "proto3";
+
 package scoretrak.host_group.v1;
 
 import "google/protobuf/wrappers.proto";
-import "scoretrak/proto/v1/uuid.proto";
 import "scoretrak/host/v1/host.proto";
+import "scoretrak/proto/v1/uuid.proto";
 
 message HostGroup {
   scoretrak.proto.v1.UUID id = 1;
@@ -13,42 +14,42 @@ message HostGroup {
   scoretrak.host.v1.Host hosts = 5;
 }
 
-message GetAllRequest{}
-message GetAllResponse{
+message GetAllRequest {}
+message GetAllResponse {
   repeated HostGroup host_groups = 1;
 }
 
-message GetByIDRequest{
+message GetByIDRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
-message GetByIDResponse{
+message GetByIDResponse {
   HostGroup host_group = 1;
 }
 
-message DeleteRequest{
+message DeleteRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message DeleteResponse{}
+message DeleteResponse {}
 
-message StoreRequest{
+message StoreRequest {
   repeated HostGroup host_groups = 1;
 }
 
-message StoreResponse{
+message StoreResponse {
   repeated scoretrak.proto.v1.UUID ids = 1;
 }
 
-message UpdateRequest{
+message UpdateRequest {
   HostGroup host_group = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-service HostGroupService{
-  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
-  rpc GetByID(GetByIDRequest) returns (GetByIDResponse){}
-  rpc Delete(DeleteRequest) returns (DeleteResponse){}
+service HostGroupService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse) {}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
   rpc Store(StoreRequest) returns (StoreResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
 }

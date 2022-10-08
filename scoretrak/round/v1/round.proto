@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.round.v1;
 
 import "google/protobuf/timestamp.proto";
@@ -13,34 +14,31 @@ message Round {
   repeated scoretrak.check.v1.Check checks = 6;
 }
 
-message GetAllRequest{}
-message GetAllResponse{
+message GetAllRequest {}
+message GetAllResponse {
   repeated Round rounds = 1;
 }
 
-message GetByIDRequest{
+message GetByIDRequest {
   uint64 id = 1;
 }
-message GetByIDResponse{
+message GetByIDResponse {
   Round round = 1;
 }
 
-message GetLastRoundRequest{}
-message GetLastRoundResponse{
+message GetLastRoundRequest {}
+message GetLastRoundResponse {
   Round round = 1;
 }
 
-message GetLastNonElapsingRoundRequest{}
-message GetLastNonElapsingRoundResponse{
+message GetLastNonElapsingRoundRequest {}
+message GetLastNonElapsingRoundResponse {
   Round round = 1;
 }
 
-
-service RoundService{
-
-  rpc GetLastNonElapsingRound(GetLastNonElapsingRoundRequest) returns (GetLastNonElapsingRoundResponse){}
-  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
-  rpc GetByID(GetByIDRequest) returns (GetByIDResponse){}
-  rpc GetLastRound(GetLastRoundRequest) returns (GetLastRoundResponse){}
-
+service RoundService {
+  rpc GetLastNonElapsingRound(GetLastNonElapsingRoundRequest) returns (GetLastNonElapsingRoundResponse) {}
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse) {}
+  rpc GetLastRound(GetLastRoundRequest) returns (GetLastRoundResponse) {}
 }

@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.config.v1;
 
 import "google/protobuf/wrappers.proto";
@@ -8,27 +9,27 @@ message DynamicConfig {
   google.protobuf.BoolValue enabled = 3;
 }
 
-message GetRequest{}
-message GetResponse{
+message GetRequest {}
+message GetResponse {
   DynamicConfig dynamic_config = 1;
 }
-message UpdateRequest{
+message UpdateRequest {
   DynamicConfig dynamic_config = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-service DynamicConfigService{
-  rpc Get(GetRequest) returns (GetResponse){}
+service DynamicConfigService {
+  rpc Get(GetRequest) returns (GetResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
 }
 
-message GetStaticConfigRequest{}
+message GetStaticConfigRequest {}
 
-message GetStaticConfigResponse{
+message GetStaticConfigResponse {
   string static_config = 1;
 }
 
-service StaticConfigService{
-  rpc Get(GetStaticConfigRequest) returns (GetStaticConfigResponse){}
+service StaticConfigService {
+  rpc Get(GetStaticConfigRequest) returns (GetStaticConfigResponse) {}
 }

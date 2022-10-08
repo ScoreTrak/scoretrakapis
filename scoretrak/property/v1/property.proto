@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.property.v1;
 
 import "google/protobuf/wrappers.proto";
@@ -18,48 +19,48 @@ message Property {
   Status status = 4;
 }
 
-message GetAllRequest{}
-message GetAllResponse{
+message GetAllRequest {}
+message GetAllResponse {
   repeated Property properties = 1;
 }
 
-message GetByServiceIDKeyRequest{
+message GetByServiceIDKeyRequest {
   scoretrak.proto.v1.UUID service_id = 1;
   string key = 2;
 }
-message GetByServiceIDKeyResponse{
+message GetByServiceIDKeyResponse {
   Property property = 1;
 }
 
-message GetAllByServiceIDRequest{
+message GetAllByServiceIDRequest {
   scoretrak.proto.v1.UUID service_id = 1;
 }
-message GetAllByServiceIDResponse{
+message GetAllByServiceIDResponse {
   repeated Property properties = 1;
 }
 
-message DeleteRequest{
+message DeleteRequest {
   scoretrak.proto.v1.UUID service_id = 1;
   string key = 2;
 }
 
-message DeleteResponse{}
+message DeleteResponse {}
 
-message StoreRequest{
+message StoreRequest {
   repeated Property properties = 1;
 }
 
-message StoreResponse{}
+message StoreResponse {}
 
-message UpdateRequest{
+message UpdateRequest {
   Property property = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-service PropertyService{
-  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
-  rpc Delete(DeleteRequest) returns (DeleteResponse){}
+service PropertyService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
   rpc Store(StoreRequest) returns (StoreResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
   rpc GetByServiceIDKey(GetByServiceIDKeyRequest) returns (GetByServiceIDKeyResponse) {}
