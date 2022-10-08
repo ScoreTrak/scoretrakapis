@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.host.v1;
 
 import "google/protobuf/wrappers.proto";
@@ -18,42 +19,42 @@ message Host {
   google.protobuf.StringValue address_list_range = 9;
 }
 
-message GetAllRequest{}
-message GetAllResponse{
+message GetAllRequest {}
+message GetAllResponse {
   repeated Host hosts = 1;
 }
 
-message GetByIDRequest{
+message GetByIDRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
-message GetByIDResponse{
+message GetByIDResponse {
   Host host = 1;
 }
 
-message DeleteRequest{
+message DeleteRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message DeleteResponse{}
+message DeleteResponse {}
 
-message StoreRequest{
+message StoreRequest {
   repeated Host hosts = 1;
 }
 
-message StoreResponse{
+message StoreResponse {
   repeated scoretrak.proto.v1.UUID ids = 1;
 }
 
-message UpdateRequest{
+message UpdateRequest {
   Host host = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-service HostService{
-  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
-  rpc GetByID(GetByIDRequest) returns (GetByIDResponse){}
-  rpc Delete(DeleteRequest) returns (DeleteResponse){}
+service HostService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse) {}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
   rpc Store(StoreRequest) returns (StoreResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
 }

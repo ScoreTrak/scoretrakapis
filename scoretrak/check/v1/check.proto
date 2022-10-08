@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.check.v1;
 
 import "google/protobuf/wrappers.proto";
@@ -12,30 +13,30 @@ message Check {
   google.protobuf.BoolValue passed = 5;
 }
 
-message GetAllByRoundIDRequest{
+message GetAllByRoundIDRequest {
   uint64 round_id = 1;
 }
-message GetAllByRoundIDResponse{
+message GetAllByRoundIDResponse {
   repeated Check checks = 1;
 }
 
-message GetByRoundServiceIDRequest{
+message GetByRoundServiceIDRequest {
   scoretrak.proto.v1.UUID service_id = 1;
   uint64 round_id = 2;
 }
-message GetByRoundServiceIDResponse{
+message GetByRoundServiceIDResponse {
   Check check = 1;
 }
 
-message GetAllByServiceIDRequest{
+message GetAllByServiceIDRequest {
   scoretrak.proto.v1.UUID service_id = 1;
 }
-message GetAllByServiceIDResponse{
+message GetAllByServiceIDResponse {
   repeated Check checks = 1;
 }
 
-service CheckService{
-  rpc GetAllByRoundID(GetAllByRoundIDRequest) returns (GetAllByRoundIDResponse){}
-  rpc GetByRoundServiceID(GetByRoundServiceIDRequest) returns (GetByRoundServiceIDResponse){}
-  rpc GetAllByServiceID(GetAllByServiceIDRequest) returns (GetAllByServiceIDResponse){}
+service CheckService {
+  rpc GetAllByRoundID(GetAllByRoundIDRequest) returns (GetAllByRoundIDResponse) {}
+  rpc GetByRoundServiceID(GetByRoundServiceIDRequest) returns (GetByRoundServiceIDResponse) {}
+  rpc GetAllByServiceID(GetAllByServiceIDRequest) returns (GetAllByServiceIDResponse) {}
 }

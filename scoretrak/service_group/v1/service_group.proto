@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.service_group.v1;
 
 import "google/protobuf/wrappers.proto";
@@ -15,49 +16,49 @@ message ServiceGroup {
   repeated scoretrak.service.v1.Service services = 7;
 }
 
-message GetAllRequest{}
-message GetAllResponse{
+message GetAllRequest {}
+message GetAllResponse {
   repeated ServiceGroup service_groups = 1;
 }
 
-message GetByIDRequest{
+message GetByIDRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
-message GetByIDResponse{
+message GetByIDResponse {
   ServiceGroup service_group = 1;
 }
 
-message DeleteRequest{
+message DeleteRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message DeleteResponse{}
+message DeleteResponse {}
 
-message StoreRequest{
+message StoreRequest {
   ServiceGroup service_group = 1;
 }
 
-message StoreResponse{
+message StoreResponse {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message UpdateRequest{
+message UpdateRequest {
   ServiceGroup service_group = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-message RedeployRequest{
+message RedeployRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message RedeployResponse{}
+message RedeployResponse {}
 
-service ServiceGroupService{
-  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
-  rpc GetByID(GetByIDRequest) returns (GetByIDResponse){}
-  rpc Delete(DeleteRequest) returns (DeleteResponse){}
+service ServiceGroupService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse) {}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
   rpc Store(StoreRequest) returns (StoreResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
-  rpc Redeploy(RedeployRequest) returns (RedeployResponse){}
+  rpc Redeploy(RedeployRequest) returns (RedeployResponse) {}
 }

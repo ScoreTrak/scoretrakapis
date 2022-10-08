@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package scoretrak.auth.v1;
 
 message LoginRequest {
@@ -6,8 +7,11 @@ message LoginRequest {
   string password = 2;
 }
 
-message LoginResponse {string access_token = 1;}
+message LoginResponse {
+  string access_token = 1;
+}
 
 service AuthService {
-  rpc Login(LoginRequest) returns (LoginResponse) {};
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+
 }

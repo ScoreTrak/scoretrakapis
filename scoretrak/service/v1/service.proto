@@ -1,10 +1,11 @@
 syntax = "proto3";
+
 package scoretrak.service.v1;
 
 import "google/protobuf/wrappers.proto";
-import "scoretrak/proto/v1/uuid.proto";
-import "scoretrak/property/v1/property.proto";
 import "scoretrak/check/v1/check.proto";
+import "scoretrak/property/v1/property.proto";
+import "scoretrak/proto/v1/uuid.proto";
 
 message Service {
   scoretrak.proto.v1.UUID id = 1;
@@ -22,51 +23,50 @@ message Service {
   repeated scoretrak.check.v1.Check checks = 13;
 }
 
-message GetAllRequest{}
-message GetAllResponse{
+message GetAllRequest {}
+message GetAllResponse {
   repeated Service services = 1;
 }
 
-message GetByIDRequest{
+message GetByIDRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
-message GetByIDResponse{
+message GetByIDResponse {
   Service service = 1;
 }
 
-message DeleteRequest{
+message DeleteRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message DeleteResponse{}
+message DeleteResponse {}
 
-message StoreRequest{
+message StoreRequest {
   repeated Service services = 1;
 }
 
-message StoreResponse{
+message StoreResponse {
   repeated scoretrak.proto.v1.UUID ids = 1;
 }
 
-message UpdateRequest{
+message UpdateRequest {
   Service service = 1;
 }
 
-message UpdateResponse{}
+message UpdateResponse {}
 
-
-message TestServiceRequest{
+message TestServiceRequest {
   scoretrak.proto.v1.UUID id = 1;
 }
 
-message TestServiceResponse{
+message TestServiceResponse {
   scoretrak.check.v1.Check check = 1;
 }
 
-service ServiceService{
-  rpc GetAll(GetAllRequest) returns (GetAllResponse){}
-  rpc GetByID(GetByIDRequest) returns (GetByIDResponse){}
-  rpc Delete(DeleteRequest) returns (DeleteResponse){}
+service ServiceService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse) {}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
   rpc Store(StoreRequest) returns (StoreResponse) {}
   rpc Update(UpdateRequest) returns (UpdateResponse) {}
   rpc TestService(TestServiceRequest) returns (TestServiceResponse) {}
