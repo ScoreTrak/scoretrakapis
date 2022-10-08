@@ -3,12 +3,14 @@ syntax = "proto3";
 package scoretrak.sponsor.v2beta;
 
 import "scoretrak/proto/v1/uuid.proto";
+import "scoretrak/sponsor_group/v1beta/sponsor_group.proto";
 
 message Sponsor {
   scoretrak.proto.v1.UUID id = 1;
   string name = 2;
   int32 order = 3;
   string image_url = 4;
+  sponsor_group.v1beta.SponsorGroup sponsor_group = 5;
 }
 
 message GetAllRequest {}
