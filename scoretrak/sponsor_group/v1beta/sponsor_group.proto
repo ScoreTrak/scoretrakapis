@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package scoretrak.sponsor_group.v1beta;
+
+import "scoretrak/proto/v1/uuid.proto";
+import "scoretrak/sponsor/v2beta/sponsor.proto";
+
+message SponsorGroup {
+  scoretrak.proto.v1.UUID id = 1;
+  string name = 2;
+  int32 order = 3;
+  repeated scoretrak.sponsor.v2beta.Sponsor sponsors = 4;
+}
+
+message GetAllRequest {}
+
+message GetAllResponse {
+  repeated SponsorGroup sponsor_groups = 1;
+}
+
+message GetByIdRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+message GetByIdResponse {
+  sponsor_group.v1beta.SponsorGroup sponsor_group = 1;
+}
+
+message StoreRequest {
+  repeated SponsorGroup sponsor_groups = 1;
+}
+
+message StoreResponse {
+  repeated scoretrak.proto.v1.UUID ids = 1;
+}
+
+message UpdateRequest {
+  SponsorGroup sponsor_group = 1;
+}
+
+message UpdateResponse {}
+
+message DeleteRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message DeleteResponse {}
+
+service SponsorService {
+  rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+  rpc GetById(GetByIdRequest) returns (GetByIdResponse) {}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+  rpc Store(StoreRequest) returns (StoreResponse) {}
+  rpc Update(UpdateRequest) returns (UpdateResponse) {}
+}
