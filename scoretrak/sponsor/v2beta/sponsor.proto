@@ -3,7 +3,6 @@ syntax = "proto3";
 package scoretrak.sponsor.v2beta;
 
 import "scoretrak/proto/v1/uuid.proto";
-import "scoretrak/sponsor_group/v1beta/sponsor_group.proto";
 
 message Sponsor {
   scoretrak.proto.v1.UUID id = 1;
