@@ -10,7 +10,7 @@ message Sponsor {
   string name = 2;
   int32 order = 3;
   string image_url = 4;
-  sponsor_group.v1beta.SponsorGroup sponsor_group = 5;
+  scoretrak.proto.v1.UUID sponsor_group_id = 5;
 }
 
 message GetAllRequest {}
