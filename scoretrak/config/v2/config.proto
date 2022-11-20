@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package scoretrak.config.v2;
+
+import "google/protobuf/wrappers.proto";
+
+message DynamicConfig {
+  uint64 round_duration = 2;
+  google.protobuf.BoolValue enabled = 3;
+}
+
+message ConfigServiceGetRequest {}
+message ConfigServiceGetResponse {
+  DynamicConfig dynamic_config = 1;
+}
+message ConfigServiceUpdateRequest {
+  DynamicConfig dynamic_config = 1;
+}
+
+message ConfigServiceUpdateResponse {}
+
+service DynamicConfigService {
+  rpc Get(ConfigServiceGetRequest) returns (ConfigServiceGetResponse) {}
+  rpc Update(ConfigServiceUpdateRequest) returns (ConfigServiceUpdateResponse) {}
+}
+
+message ConfigServiceGetStaticConfigRequest {}
+
+message ConfigServiceGetStaticConfigResponse {
+  string static_config = 1;
+}
+
+service StaticConfigService {
+  rpc Get(ConfigServiceGetStaticConfigRequest) returns (ConfigServiceGetStaticConfigResponse) {}
+}
