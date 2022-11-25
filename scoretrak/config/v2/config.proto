@@ -9,27 +9,27 @@ message DynamicConfig {
   google.protobuf.BoolValue enabled = 3;
 }
 
-message ConfigServiceGetRequest {}
-message ConfigServiceGetResponse {
+message DynamicConfigServiceGetRequest {}
+message DynamicConfigServiceGetResponse {
   DynamicConfig dynamic_config = 1;
 }
-message ConfigServiceUpdateRequest {
+message DynamicConfigServiceUpdateRequest {
   DynamicConfig dynamic_config = 1;
 }
 
-message ConfigServiceUpdateResponse {}
+message DynamicConfigServiceUpdateResponse {}
 
 service DynamicConfigService {
-  rpc Get(ConfigServiceGetRequest) returns (ConfigServiceGetResponse) {}
-  rpc Update(ConfigServiceUpdateRequest) returns (ConfigServiceUpdateResponse) {}
+  rpc Get(DynamicConfigServiceGetRequest) returns (DynamicConfigServiceGetResponse) {}
+  rpc Update(DynamicConfigServiceUpdateRequest) returns (DynamicConfigServiceUpdateResponse) {}
 }
 
-message ConfigServiceGetStaticConfigRequest {}
+message StaticConfigServiceGetRequest {}
 
-message ConfigServiceGetStaticConfigResponse {
+message StaticConfigServiceGetResponse {
   string static_config = 1;
 }
 
 service StaticConfigService {
-  rpc Get(ConfigServiceGetStaticConfigRequest) returns (ConfigServiceGetStaticConfigResponse) {}
+  rpc Get(StaticConfigServiceGetRequest) returns (StaticConfigServiceGetResponse) {}
 }
