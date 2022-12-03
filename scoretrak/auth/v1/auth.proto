@@ -13,4 +13,5 @@ message LoginResponse {
 
 service AuthService {
   rpc Login(LoginRequest) returns (LoginResponse) {}
+
 }
