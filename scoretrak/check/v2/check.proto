@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package scoretrak.check.v2;
+
+import "google/protobuf/wrappers.proto";
+import "scoretrak/proto/v1/uuid.proto";
+
+message Check {
+  scoretrak.proto.v1.UUID service_id = 1;
+  uint64 round_id = 2;
+  string log = 3;
+  string err = 4;
+  google.protobuf.BoolValue passed = 5;
+}
+
+message CheckServiceGetAllByRoundIDRequest {
+  uint64 round_id = 1;
+}
+message CheckServiceGetAllByRoundIDResponse {
+  repeated Check checks = 1;
+}
+
+message CheckServiceGetByRoundServiceIDRequest {
+  scoretrak.proto.v1.UUID service_id = 1;
+  uint64 round_id = 2;
+}
+message CheckServiceGetByRoundServiceIDResponse {
+  Check check = 1;
+}
+
+message CheckServiceGetAllByServiceIDRequest {
+  scoretrak.proto.v1.UUID service_id = 1;
+}
+message CheckServiceGetAllByServiceIDResponse {
+  repeated Check checks = 1;
+}
+
+service CheckService {
+  rpc GetAllByRoundID(CheckServiceGetAllByRoundIDRequest) returns (CheckServiceGetAllByRoundIDResponse) {}
+  rpc GetByRoundServiceID(CheckServiceGetByRoundServiceIDRequest) returns (CheckServiceGetByRoundServiceIDResponse) {}
+  rpc GetAllByServiceID(CheckServiceGetAllByServiceIDRequest) returns (CheckServiceGetAllByServiceIDResponse) {}
+}

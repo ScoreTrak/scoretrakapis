@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package scoretrak.service_group.v2;
+
+import "google/protobuf/wrappers.proto";
+import "scoretrak/proto/v1/uuid.proto";
+import "scoretrak/service/v1/service.proto";
+
+message ServiceGroup {
+  scoretrak.proto.v1.UUID id = 1;
+  string name = 2;
+  string display_name = 3;
+  google.protobuf.BoolValue enabled = 4;
+  bool skip_helper = 5;
+  string label = 6;
+  repeated scoretrak.service.v1.Service services = 7;
+}
+
+message ServiceGroupServiceGetAllRequest {}
+message ServiceGroupServiceGetAllResponse {
+  repeated ServiceGroup service_groups = 1;
+}
+
+message ServiceGroupServiceGetByIDRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+message ServiceGroupServiceGetByIDResponse {
+  ServiceGroup service_group = 1;
+}
+
+message ServiceGroupServiceDeleteRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message ServiceGroupServiceDeleteResponse {}
+
+message ServiceGroupServiceStoreRequest {
+  ServiceGroup service_group = 1;
+}
+
+message ServiceGroupServiceStoreResponse {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message ServiceGroupServiceUpdateRequest {
+  ServiceGroup service_group = 1;
+}
+
+message ServiceGroupServiceUpdateResponse {}
+
+message ServiceGroupServiceRedeployRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message ServiceGroupServiceRedeployResponse {}
+
+service ServiceGroupService {
+  rpc GetAll(ServiceGroupServiceGetAllRequest) returns (ServiceGroupServiceGetAllResponse) {}
+  rpc GetByID(ServiceGroupServiceGetByIDRequest) returns (ServiceGroupServiceGetByIDResponse) {}
+  rpc Delete(ServiceGroupServiceDeleteRequest) returns (ServiceGroupServiceDeleteResponse) {}
+  rpc Store(ServiceGroupServiceStoreRequest) returns (ServiceGroupServiceStoreResponse) {}
+  rpc Update(ServiceGroupServiceUpdateRequest) returns (ServiceGroupServiceUpdateResponse) {}
+  rpc Redeploy(ServiceGroupServiceRedeployRequest) returns (ServiceGroupServiceRedeployResponse) {}
+}

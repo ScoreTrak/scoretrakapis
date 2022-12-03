@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package scoretrak.team.v2;
+
+import "google/protobuf/wrappers.proto";
+import "scoretrak/host/v1/host.proto";
+import "scoretrak/proto/v1/uuid.proto";
+import "scoretrak/user/v1/user.proto";
+
+message Team {
+  scoretrak.proto.v1.UUID id = 1;
+  string name = 2;
+  google.protobuf.BoolValue hide = 3;
+  google.protobuf.BoolValue pause = 4;
+  repeated scoretrak.host.v1.Host hosts = 5;
+  google.protobuf.UInt64Value index = 6;
+  repeated scoretrak.user.v1.User users = 7;
+}
+
+message TeamServiceGetAllRequest {}
+message TeamServiceGetAllResponse {
+  repeated Team teams = 1;
+}
+
+message TeamServiceGetByIDRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+message TeamServiceGetByIDResponse {
+  Team team = 1;
+}
+
+message TeamServiceDeleteRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message TeamServiceDeleteResponse {}
+
+message TeamServiceStoreRequest {
+  repeated Team teams = 1;
+}
+
+message TeamServiceStoreResponse {
+  repeated scoretrak.proto.v1.UUID ids = 1;
+}
+
+message TeamServiceUpdateRequest {
+  Team team = 1;
+}
+
+message TeamServiceUpdateResponse {}
+
+service TeamService {
+  rpc GetAll(TeamServiceGetAllRequest) returns (TeamServiceGetAllResponse) {}
+  rpc GetByID(TeamServiceGetByIDRequest) returns (TeamServiceGetByIDResponse) {}
+  rpc Delete(TeamServiceDeleteRequest) returns (TeamServiceDeleteResponse) {}
+  rpc Store(TeamServiceStoreRequest) returns (TeamServiceStoreResponse) {}
+  rpc Update(TeamServiceUpdateRequest) returns (TeamServiceUpdateResponse) {}
+}

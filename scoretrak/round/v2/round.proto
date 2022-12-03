@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package scoretrak.round.v2;
+
+import "google/protobuf/timestamp.proto";
+import "scoretrak/check/v1/check.proto";
+
+message Round {
+  uint64 id = 1;
+  google.protobuf.Timestamp start = 2;
+  string note = 3;
+  string err = 4;
+  google.protobuf.Timestamp finish = 5;
+  repeated scoretrak.check.v1.Check checks = 6;
+}
+
+message RoundServiceGetAllRequest {}
+message RoundServiceGetAllResponse {
+  repeated Round rounds = 1;
+}
+
+message RoundServiceGetByIDRequest {
+  uint64 id = 1;
+}
+message RoundServiceGetByIDResponse {
+  Round round = 1;
+}
+
+message RoundServiceGetLastRoundRequest {}
+message RoundServiceGetLastRoundResponse {
+  Round round = 1;
+}
+
+message RoundServiceGetLastNonElapsingRoundRequest {}
+message RoundServiceGetLastNonElapsingRoundResponse {
+  Round round = 1;
+}
+
+service RoundService {
+  rpc GetLastNonElapsingRound(RoundServiceGetLastNonElapsingRoundRequest) returns (RoundServiceGetLastNonElapsingRoundResponse) {}
+  rpc GetAll(RoundServiceGetAllRequest) returns (RoundServiceGetAllResponse) {}
+  rpc GetByID(RoundServiceGetByIDRequest) returns (RoundServiceGetByIDResponse) {}
+  rpc GetLastRound(RoundServiceGetLastRoundRequest) returns (RoundServiceGetLastRoundResponse) {}
+}

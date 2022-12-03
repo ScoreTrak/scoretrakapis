@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package scoretrak.property.v2;
+
+import "google/protobuf/wrappers.proto";
+import "scoretrak/proto/v1/uuid.proto";
+
+enum Status {
+  STATUS_UNSPECIFIED = 0;
+  STATUS_VIEW = 1;
+  STATUS_EDIT = 2;
+  STATUS_HIDE = 3;
+}
+
+message Property {
+  scoretrak.proto.v1.UUID service_id = 1;
+  string key = 2;
+  google.protobuf.StringValue value = 3;
+  Status status = 4;
+}
+
+message PropertyServiceGetAllRequest {}
+message PropertyServiceGetAllResponse {
+  repeated Property properties = 1;
+}
+
+message PropertyServiceGetByServiceIDKeyRequest {
+  scoretrak.proto.v1.UUID service_id = 1;
+  string key = 2;
+}
+message PropertyServiceGetByServiceIDKeyResponse {
+  Property property = 1;
+}
+
+message PropertyServiceGetAllByServiceIDRequest {
+  scoretrak.proto.v1.UUID service_id = 1;
+}
+message PropertyServiceGetAllByServiceIDResponse {
+  repeated Property properties = 1;
+}
+
+message PropertyServiceDeleteRequest {
+  scoretrak.proto.v1.UUID service_id = 1;
+  string key = 2;
+}
+
+message PropertyServiceDeleteResponse {}
+
+message PropertyServiceStoreRequest {
+  repeated Property properties = 1;
+}
+
+message PropertyServiceStoreResponse {}
+
+message PropertyServiceUpdateRequest {
+  Property property = 1;
+}
+
+message PropertyServiceUpdateResponse {}
+
+service PropertyService {
+  rpc GetAll(PropertyServiceGetAllRequest) returns (PropertyServiceGetAllResponse) {}
+  rpc Delete(PropertyServiceDeleteRequest) returns (PropertyServiceDeleteResponse) {}
+  rpc Store(PropertyServiceStoreRequest) returns (PropertyServiceStoreResponse) {}
+  rpc Update(PropertyServiceUpdateRequest) returns (PropertyServiceUpdateResponse) {}
+  rpc GetByServiceIDKey(PropertyServiceGetByServiceIDKeyRequest) returns (PropertyServiceGetByServiceIDKeyResponse) {}
+  rpc GetAllByServiceID(PropertyServiceGetAllByServiceIDRequest) returns (PropertyServiceGetAllByServiceIDResponse) {}
+}
