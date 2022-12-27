@@ -1,3 +1,3 @@
 
 check-breaking-changes:
-	buf breaking --against git@github.com:Scoretrak/scoretrakapis.git
+	buf breaking --against '.git#branch=main'
