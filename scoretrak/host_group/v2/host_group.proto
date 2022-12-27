@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package scoretrak.host_group.v2;
+
+import "google/protobuf/wrappers.proto";
+import "scoretrak/host/v2/host.proto";
+import "scoretrak/proto/v1/uuid.proto";
+
+message HostGroup {
+  scoretrak.proto.v1.UUID id = 1;
+  string name = 2;
+  google.protobuf.BoolValue hide = 3;
+  google.protobuf.BoolValue pause = 4;
+  scoretrak.host.v2.Host hosts = 5;
+}
+
+message HostGroupServiceGetAllRequest {}
+message HostGroupServiceGetAllResponse {
+  repeated HostGroup host_groups = 1;
+}
+
+message HostGroupServiceGetByIDRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+message HostGroupServiceGetByIDResponse {
+  HostGroup host_group = 1;
+}
+
+message HostGroupServiceDeleteRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message HostGroupServiceDeleteResponse {}
+
+message HostGroupServiceStoreRequest {
+  repeated HostGroup host_groups = 1;
+}
+
+message HostGroupServiceStoreResponse {
+  repeated scoretrak.proto.v1.UUID ids = 1;
+}
+
+message HostGroupServiceUpdateRequest {
+  HostGroup host_group = 1;
+}
+
+message HostGroupServiceUpdateResponse {}
+
+service HostGroupService {
+  rpc GetAll(HostGroupServiceGetAllRequest) returns (HostGroupServiceGetAllResponse) {}
+  rpc GetByID(HostGroupServiceGetByIDRequest) returns (HostGroupServiceGetByIDResponse) {}
+  rpc Delete(HostGroupServiceDeleteRequest) returns (HostGroupServiceDeleteResponse) {}
+  rpc Store(HostGroupServiceStoreRequest) returns (HostGroupServiceStoreResponse) {}
+  rpc Update(HostGroupServiceUpdateRequest) returns (HostGroupServiceUpdateResponse) {}
+}

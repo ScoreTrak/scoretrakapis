@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package scoretrak.user.v2;
+
+import "scoretrak/proto/v1/uuid.proto";
+
+message User {
+  scoretrak.proto.v1.UUID id = 1;
+  string username = 2;
+  scoretrak.proto.v1.UUID team_id = 4;
+  string password = 5;
+  Role role = 6;
+  string password_hash = 7;
+}
+
+enum Role {
+  ROLE_UNSPECIFIED = 0;
+  ROLE_BLUE = 1;
+  ROLE_RED = 2;
+  ROLE_BLACK = 3;
+}
+
+message UserServiceGetAllRequest {}
+message UserServiceGetAllResponse {
+  repeated User users = 1;
+}
+
+message UserServiceGetByIDRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+message UserServiceGetByIDResponse {
+  User user = 1;
+}
+
+message UserServiceDeleteRequest {
+  scoretrak.proto.v1.UUID id = 1;
+}
+
+message UserServiceDeleteResponse {}
+
+message UserServiceStoreRequest {
+  repeated User users = 1;
+}
+
+message UserServiceStoreResponse {
+  repeated scoretrak.proto.v1.UUID ids = 1;
+}
+
+message UserServiceUpdateRequest {
+  User user = 1;
+}
+
+message UserServiceUpdateResponse {}
+
+message UserServiceGetByUsernameRequest {
+  string username = 1;
+}
+
+message UserServiceGetByUsernameResponse {
+  User user = 1;
+}
+
+service UserService {
+  rpc GetAll(UserServiceGetAllRequest) returns (UserServiceGetAllResponse) {}
+  rpc GetByID(UserServiceGetByIDRequest) returns (UserServiceGetByIDResponse) {}
+  rpc Delete(UserServiceDeleteRequest) returns (UserServiceDeleteResponse) {}
+  rpc Store(UserServiceStoreRequest) returns (UserServiceStoreResponse) {}
+  rpc Update(UserServiceUpdateRequest) returns (UserServiceUpdateResponse) {}
+  rpc GetByUsername(UserServiceGetByUsernameRequest) returns (UserServiceGetByUsernameResponse) {}
+}
