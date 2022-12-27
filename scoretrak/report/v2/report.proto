@@ -13,7 +13,12 @@ message ReportServiceGetRequest {}
 message ReportServiceGetResponse {
   Report report = 1;
 }
+message ReportServiceGetUnaryRequest {}
+message ReportServiceGetUnaryResponse {
+  Report report = 1;
+}
 
 service ReportService {
   rpc Get(ReportServiceGetRequest) returns (stream ReportServiceGetResponse) {}
+  rpc GetUnary(ReportServiceGetUnaryRequest) returns (ReportServiceGetUnaryResponse) {}
 }

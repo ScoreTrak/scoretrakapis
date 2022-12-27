@@ -16,6 +16,10 @@ message PolicyServiceGetRequest {}
 message PolicyServiceGetResponse {
   Policy policy = 1;
 }
+message PolicyServiceGetUnaryRequest {}
+message PolicyServiceGetUnaryResponse {
+  Policy policy = 1;
+}
 message PolicyServiceUpdateRequest {
   Policy policy = 1;
 }
@@ -24,5 +28,6 @@ message PolicyServiceUpdateResponse {}
 
 service PolicyService {
   rpc Get(PolicyServiceGetRequest) returns (stream PolicyServiceGetResponse) {}
+  rpc GetUnary(PolicyServiceGetUnaryRequest) returns (PolicyServiceGetUnaryResponse) {}
   rpc Update(PolicyServiceUpdateRequest) returns (PolicyServiceUpdateResponse) {}
 }
