@@ -4,7 +4,7 @@ package scoretrak.service_group.v2;
 
 import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
-import "scoretrak/service/v1/service.proto";
+import "scoretrak/service/v2/service.proto";
 
 message ServiceGroup {
   scoretrak.proto.v1.UUID id = 1;
@@ -13,7 +13,7 @@ message ServiceGroup {
   google.protobuf.BoolValue enabled = 4;
   bool skip_helper = 5;
   string label = 6;
-  repeated scoretrak.service.v1.Service services = 7;
+  repeated scoretrak.service.v2.Service services = 7;
 }
 
 message ServiceGroupServiceGetAllRequest {}

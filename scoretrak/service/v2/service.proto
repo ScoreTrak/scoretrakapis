@@ -3,8 +3,8 @@ syntax = "proto3";
 package scoretrak.service.v2;
 
 import "google/protobuf/wrappers.proto";
-import "scoretrak/check/v1/check.proto";
-import "scoretrak/property/v1/property.proto";
+import "scoretrak/check/v2/check.proto";
+import "scoretrak/property/v2/property.proto";
 import "scoretrak/proto/v1/uuid.proto";
 
 message Service {
@@ -19,8 +19,8 @@ message Service {
   scoretrak.proto.v1.UUID host_id = 9;
   google.protobuf.BoolValue hide = 10;
   google.protobuf.BoolValue pause = 11;
-  repeated scoretrak.property.v1.Property properties = 12;
-  repeated scoretrak.check.v1.Check checks = 13;
+  repeated scoretrak.property.v2.Property properties = 12;
+  repeated scoretrak.check.v2.Check checks = 13;
 }
 
 message ServiceServiceGetAllRequest {}
@@ -60,7 +60,7 @@ message ServiceServiceTestServiceRequest {
 }
 
 message ServiceServiceTestServiceResponse {
-  scoretrak.check.v1.Check check = 1;
+  scoretrak.check.v2.Check check = 1;
 }
 
 service ServiceService {

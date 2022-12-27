@@ -3,18 +3,18 @@ syntax = "proto3";
 package scoretrak.team.v2;
 
 import "google/protobuf/wrappers.proto";
-import "scoretrak/host/v1/host.proto";
+import "scoretrak/host/v2/host.proto";
 import "scoretrak/proto/v1/uuid.proto";
-import "scoretrak/user/v1/user.proto";
+import "scoretrak/user/v2/user.proto";
 
 message Team {
   scoretrak.proto.v1.UUID id = 1;
   string name = 2;
   google.protobuf.BoolValue hide = 3;
   google.protobuf.BoolValue pause = 4;
-  repeated scoretrak.host.v1.Host hosts = 5;
+  repeated scoretrak.host.v2.Host hosts = 5;
   google.protobuf.UInt64Value index = 6;
-  repeated scoretrak.user.v1.User users = 7;
+  repeated scoretrak.user.v2.User users = 7;
 }
 
 message TeamServiceGetAllRequest {}

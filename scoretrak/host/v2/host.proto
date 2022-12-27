@@ -4,7 +4,7 @@ package scoretrak.host.v2;
 
 import "google/protobuf/wrappers.proto";
 import "scoretrak/proto/v1/uuid.proto";
-import "scoretrak/service/v1/service.proto";
+import "scoretrak/service/v2/service.proto";
 
 message Host {
   scoretrak.proto.v1.UUID id = 1;
@@ -15,7 +15,7 @@ message Host {
   google.protobuf.BoolValue hide = 6;
 
   google.protobuf.BoolValue edit_host = 7;
-  repeated scoretrak.service.v1.Service services = 8;
+  repeated scoretrak.service.v2.Service services = 8;
   google.protobuf.StringValue address_list_range = 9;
 }
 

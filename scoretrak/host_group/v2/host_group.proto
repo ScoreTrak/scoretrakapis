@@ -3,7 +3,7 @@ syntax = "proto3";
 package scoretrak.host_group.v2;
 
 import "google/protobuf/wrappers.proto";
-import "scoretrak/host/v1/host.proto";
+import "scoretrak/host/v2/host.proto";
 import "scoretrak/proto/v1/uuid.proto";
 
 message HostGroup {
@@ -11,7 +11,7 @@ message HostGroup {
   string name = 2;
   google.protobuf.BoolValue hide = 3;
   google.protobuf.BoolValue pause = 4;
-  scoretrak.host.v1.Host hosts = 5;
+  scoretrak.host.v2.Host hosts = 5;
 }
 
 message HostGroupServiceGetAllRequest {}

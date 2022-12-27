@@ -3,7 +3,7 @@ syntax = "proto3";
 package scoretrak.round.v2;
 
 import "google/protobuf/timestamp.proto";
-import "scoretrak/check/v1/check.proto";
+import "scoretrak/check/v2/check.proto";
 
 message Round {
   uint64 id = 1;
@@ -11,7 +11,7 @@ message Round {
   string note = 3;
   string err = 4;
   google.protobuf.Timestamp finish = 5;
-  repeated scoretrak.check.v1.Check checks = 6;
+  repeated scoretrak.check.v2.Check checks = 6;
 }
 
 message RoundServiceGetAllRequest {}
