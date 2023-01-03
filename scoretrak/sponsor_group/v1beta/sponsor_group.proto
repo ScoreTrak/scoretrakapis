@@ -10,6 +10,7 @@ message SponsorGroup {
   string name = 2;
   int32 order = 3;
   repeated scoretrak.sponsor.v2beta.Sponsor sponsors = 4;
+  string test = 5;
 }
 
 message GetAllRequest {}
